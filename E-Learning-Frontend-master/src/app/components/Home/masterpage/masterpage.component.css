@@ -1,0 +1,31 @@
+#goUp {
+  font-size: 60px;
+  position: fixed;
+  bottom: 2%;
+  right: 2%;
+  display: block;
+  color: #00adb5;
+  transition: all .3s ease;
+}
+#goUp:hover{
+  color: black;
+  text-shadow: .5px .5px 9px #555;
+  transform: scale(1.1);
+}
+
+/* goup smooth*/
+html {
+  scroll-behavior: smooth;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  opacity: 0;
+  transition: all .2s ease-in-out;
+ }
+ .show-scrollTop {
+  opacity: 1;
+  transition: all .2s ease-in-out;
+ }

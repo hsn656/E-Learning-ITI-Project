@@ -1,0 +1,27 @@
+<section id="login">
+    <div class="container logimg">
+        <div class="row">
+            <div class="col-lg-4 text-center seting">
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group text-right">
+                        <label>البريد الالكتروني</label>
+                        <input type="text" formControlName="Email" class="form-control" [ngClass]="{ 'is-invalid': loginForm.get('Email').invalid && (loginForm.get('Email').touched ||loginForm.get('Email').dirty)||(submitted && loginForm.controls.Email.errors)}" />
+                        <div *ngIf="submitted || loginForm.controls.Email.errors" class="invalid-feedback  text-danger">
+                            <div *ngIf="loginForm.controls.Email.errors?.required">البريد الإلكتروني مطلوب</div>
+                            <div *ngIf="loginForm.controls.Email.errors?.email">يرجى إدخال البريد الإلكتروني بشكل صحيح</div>
+                        </div>
+                    </div>
+                    <div class="form-group text-right">
+                        <label>كلمة السر</label>
+                        <input type="password" formControlName="Password" class="form-control" />
+                    </div>
+                    <div class="text-center">
+                        <button class="btn subbtnlog rounded-pill" type="submit"> تسجيل الدخول &nbsp;  &nbsp; <i class="fas fa-sign-in-alt"></i></button>
+                    </div>
+                    <br>
+                    <span>ليس لديك حساب قم بالتسجيل من <a class="text-dark" routerLink="/register" >هنا</a></span>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

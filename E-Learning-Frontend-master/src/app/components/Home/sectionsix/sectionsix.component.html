@@ -1,0 +1,17 @@
+<!-- section6 -->
+<section id="sec6" class="mt-4">
+  <h2 class="text-center mb-3">مقالات تهمك</h2>
+  <div class="container-fluid">
+      <div class="row p-4 text-center">
+          <div class="col-lg-4 mb-3"*ngFor="let article of articles">
+              <div class="box m-auto">
+                <h3>{{article.title}}</h3>
+                <p><span>
+                      {{article.discription | slice:0:115 }}
+                    </span>
+                    <a routerLink='/article/{{article.id}}'>اقرأ المزيد</a></p>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>

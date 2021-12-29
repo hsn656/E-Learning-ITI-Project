@@ -1,0 +1,29 @@
+#login{
+  margin-top:5.8%;
+  font-size: 20px;
+}
+.logimg{
+  background: url('../../../assets/images/log.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  height: 100vh;
+}
+
+.subbtnlog{
+  background: linear-gradient(to bottom right ,#00adb5,black );
+  border: none;
+  color: white;
+  transition: all .4s ease-in-out;
+}
+.subbtnlog:hover{
+  color: #00adb5;
+  border: #00adb5 solid .5px;
+  background: transparent;
+}
+
+
+.seting{
+  margin-top: 17%;
+}

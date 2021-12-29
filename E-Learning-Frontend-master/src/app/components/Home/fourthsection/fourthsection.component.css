@@ -1,0 +1,42 @@
+
+#sec4 .row .col-lg-3 .card{
+  border-radius: 20% 0 20% 0;
+  transition: all .3s ease;
+  overflow: hidden;
+}
+#sec4 .row .col-lg-3 .card img{
+      border-radius: 20% 0 0 0;
+}
+
+#sec4 .row .col-lg-3 .card:hover{
+  box-shadow: .3rem .5rem .5rem rgba(0, 0, 0, 0.3);
+  transform: translateY(-6px);
+}
+
+#sec4 .row .col-lg-3 .card .card-img-overlay{
+  opacity: 0;
+  transition: all .3s ease;
+  background-color: #eeefffb2;
+}
+
+#sec4 .row .col-lg-3 .card .card-img-overlay:hover{
+  opacity: 1;
+  transition: all .3s ease;
+}
+#sec4 h2::after{
+  content: '';
+  background: black;
+  display: block;
+  height: 3px;
+  width: 170px;
+  margin: 20px auto 5px;
+}
+#sec4 .btn.btn-dark{
+  margin-left: 50px;
+  margin-top: 80px;
+  transition: all .3s ease;
+}
+#sec4 .btn.btn-dark:hover{
+  border: none;
+  background-color: red;
+}

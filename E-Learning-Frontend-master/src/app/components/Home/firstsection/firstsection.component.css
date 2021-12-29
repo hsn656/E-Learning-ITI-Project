@@ -1,0 +1,28 @@
+#section1{
+  background: url('https://images.unsplash.com/photo-1494599948593-3dafe8338d71?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80'),
+  linear-gradient(to bottom right , #5bc0de , black);
+  background-blend-mode: overlay;
+  background-size: cover;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 31% 82%, 0 72%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 31% 82%, 0 72%);
+}
+.textheader{
+  color: white;
+  font-size: 60px;
+}
+.textheader:hover{
+  color: #eeefff;
+  text-decoration: none;
+}
+.text-parag{
+  font-size: 40px;
+  color: white;
+  line-height: 50px;
+}
+.sectionMiddle{
+  width: 60%;
+}
+.searchicon{
+  color: white;
+  border: white;
+}

@@ -1,0 +1,36 @@
+
+#sec2 h2{
+  color: black;
+  transition: all .3s ease;
+}
+#sec2 h2:hover{
+  color: #5bc0de;
+  cursor: pointer;
+}
+.main-row{
+  margin-top: 10%;
+}
+.main-row .card{
+  cursor: pointer;
+  background-color: #eeefff;
+  transition: all .2s ease;
+}
+.main-row .card img{
+  transform: translateY(-50px);
+  border-radius: 15px;
+  z-index: 1;
+  height:200px ;
+}
+.main-row .card .card-body{
+  height: 140px;
+}
+.main-row .card .card-body button:hover{
+  background-color: red;
+  border: none;
+}
+.main-row .card:hover .card-body{
+  transition: all .5s ease;
+}
+.main-row .card:hover{
+  background-color: transparent;
+}

@@ -1,0 +1,69 @@
+<section class="" id="lsn">
+    <h1 class="text-center">{{lesson?.title}}</h1>
+    <div class="container-fluid">
+        <div class="row mt-1 mb-5">
+            <div class="col-lg-3 text-right ml-2 mr-2 mb-3" id="f">
+                <button class="btn filterbord col-lg-3 text-right" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="font-weight: 500;">
+                  <div class="d-flex justify-content-between">
+                    عرض الدروس<i class="fas fa-caret-down"></i>
+                  </div>
+                  </button>
+                <div class="collapse" id="collapseExample">
+                    <div id="accordion" class="text-right">
+                        <div *ngFor="let lsn of lessons" class="card linksbg">
+                            <div class="card-header">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link lsnlinks">
+                  {{lsn.title}}
+                </button>
+                                </h5>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="accordion" class="col-lg-3 text-right dk">
+                <div *ngFor="let lsn of lessons" class="card linksbg">
+                    <div class="card-header">
+                        <h5 class="mb-0">
+                            <a [routerLink]='["/lesson",lsn.id]' class="btn btn-link lsnlinks">
+              {{lsn.title}}
+            </a>
+                        </h5>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="text-center col-lg-6">
+                <!-- <h1>{{lesson?.title}}</h1> -->
+                <div class="embed-responsive embed-responsive-16by9">
+                    <div #video id="videoBody" class="embed-responsive-item">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3  ">
+                <div *ngIf="relatedLessons?.length>0" class="mb-3 media faq p-3 aos-init aos-animate" data-aos="fade-in" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out">
+                    <div>
+                        <h2 class="text-right mt-0 mb-2">دروس متعلقة</h2>
+                        <div *ngFor="let lsn of relatedLessons" class="text-right">
+                            <a [routerLink]='["/lesson",lsn?.id]' class="text-right btn d-block related-link"> {{lsn?.title}} </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div *ngIf="relatedArticles?.length>0" class="my-3 media faq p-3 aos-init aos-animate" data-aos="fade-in" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out">
+                    <div>
+                        <h2 class="text-right mt-0 mb-2">مقالات متعلقة</h2>
+                        <div *ngFor="let article of relatedArticles" class="text-right">
+                            <a [routerLink]='["/article",article?.id]' class="text-right btn d-block related-link"> {{article?.title}} </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-articlecomment></app-articlecomment>
+</section>

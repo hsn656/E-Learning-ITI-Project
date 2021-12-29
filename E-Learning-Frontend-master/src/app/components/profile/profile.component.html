@@ -1,0 +1,189 @@
+<div class="header pb-8 d-flex align-items-center position-relative" style="background-image: url(assets/images/slider-3.png); background-size: cover; background-position: center ; margin-top: 5em;">
+  <!-- Mask -->
+  <span class="mask bg-gradient-default opacity-8"></span>
+  <!-- Header container -->
+  <div class="container-fluid ">
+      <div class="row w-100 mr-2">
+          <div class="col-lg-7 col-md-10">
+              <h1 class="text-right text-white mt-5">مرحبا بك</h1>
+              <p class="text-right text-white mt-0 mb-5">هذه هي صفحة ملفك الشخصي. يمكنك رؤية التقدم الذي أحرزته في عملك وإدارة مشاريعك أو المهام المعينة</p>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="container-fluid mt-3 d-flex justify-content-around index body_position">
+  <div class="row w-100 mb-3">
+      <div class="col-lg-4 col-sm-12 order-lg-2 mb-5 mb-lg-0 px-0">
+          <div class="col-12  d-flex justify-content-center ">
+              <div class="card border-none shadow ">
+                  <div class="d-flex justify-content-center" style="margin-top: 2em;">
+                      <img #image id="profile-img" class="rounded-circle mx-auto position-relative" [src]="getImg(user.image)" alt="profile_pic" width="200px" height="200px">
+                      <input #file (change)="uploadPhoto(file.files, image)" type="file" id="file-upload" hidden="">
+                      <button id="save-photo" type="button" onclick="document.getElementById('file-upload').click();" class="btnn ">تعديل</button>
+                  </div>
+
+
+                  <div class="card-body">
+                      <div class="d-flex justify-content-around mb-3">
+                          <div>
+                              <span class="ml-3">13</span>
+                              <p class="m-0 text-black-50">الأسئله</p>
+                          </div>
+                          <div>
+                              <span class="ml-3">4</span>
+                              <p class="m-0 text-black-50">الدورات</p>
+                          </div>
+                          <!-- <div>
+                              <span class="ml-3">15</span>
+                              <p class="m-0 text-black-50">الأصدقاء</p>
+                          </div> -->
+                      </div>
+                      <div id="profile-name" class="mb-4">
+                          <h3 class="text-center mb-0">{{ user.firstName +' '+user.lastName }}</h3>
+                          <!-- <p class="m-0 text-black-50 h6 font-weight-lighter text-center">مصر,القاهرة</p> -->
+                      </div>
+                      <!-- <div class="d-flex justify-content-center mb-0">
+                          <p class="mb-0">مهندس كهرباء- شركة وادينا للطاقة</p>
+                      </div>
+                      <div class="d-flex justify-content-center mt-0">
+                          <p class="text-black-50 mt-0 font-weight-light">جامعة القاهرة-كلية الهندسه</p>
+                      </div> -->
+                      <hr>
+                      <p class="card-text text-center text-muted font-weight-light">
+                          علم النحو من علوم اللغة العربية ويعد العلم الأهم بينها، معرفته ضرورية على أهل الشريعة إذ مأخذ الأحكام الشرعية كلها من الكتاب والسنة، وتعلم لمن أراد علم الشريعة.</p>
+                      <!-- <div class="d-flex justify-content-center mt-5">
+                          <button id="closeAcount" type="button" class="btn btn-danger">حذف الحساب</button>
+                      </div> -->
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+      <div class="col-lg-8 col-sm-12 order-lg-1 ">
+          <div>
+              <div class="card shadow" style="direction: rtl;">
+                  <div class="card-header text-right bg-white">
+                      حسابي
+                  </div>
+                  <div class="card-body bg-cusGray px-4">
+                      <div class="needs-validation" novalidate="">
+                        <form #frm="ngForm" (ngSubmit)="onSubmit()">
+                          <div class="form-row">
+                              <div class="col-md-6 mb-3 text-right first-name">
+                                  <label for="validationCustom01">الاسم الأول</label>
+                                  <input #fname="ngModel" [(ngModel)]="user.firstName" name="fname" type="text" class="form-control text-right" id="validationCustom01" placeholder="الاسم الاول" required minlength="3"
+                                    [ngClass]="{ 'is-invalid': fname.invalid && (fname.touched ||fname.dirty)}">
+                                  <small id="helpId" [hidden]="fname.valid || fname.pristine" class="text-danger">برجاء كتابة الاسم الاول</small>
+                              </div>
+                              <div class="col-md-6 mb-3 text-right last-name">
+                                  <label for="validationCustom02">الاسم الأخير</label>
+                                  <input #lname="ngModel" [(ngModel)]="user.lastName" name="lname" type="text" class="form-control text-right " id="validationCustom02" placeholder="الاسم الأخير" required minlength="3"
+                                    [ngClass]="{ 'is-invalid': lname.invalid && (lname.touched ||lname.dirty)}">
+                                  <small id="helpId" [hidden]="lname.valid || lname.pristine" class="text-danger">برجاء كتابة الاسم الاخير</small>
+                              </div>
+                          </div>
+
+
+
+                          <div class="form-row">
+                              <div class="col-md-6 mb-3 text-right phone-number">
+                                  <label for="validationCustom03">رقم الهاتف</label>
+                                  <input #phone="ngModel" required maxlength="11" minlength="11" [(ngModel)]="user.phoneNumber" name="phone" type="text" class="form-control" id="validationCustom03"
+                                    [ngClass]="{ 'is-invalid': phone.invalid && (phone.touched ||phone.dirty)}">
+                                  <small id="helpId" [hidden]="lname.valid || lname.pristine" class="text-danger">برجاء كتابة رقم الهاتف</small>
+
+                              </div>
+                              <div class="col-md-3 mb-3 text-right">
+                                  <label for="validationCustom04">المدينة</label>
+                                  <select class="custom-select text-right" id="validationCustom04" required="">
+                                  <option selected>المنيا</option>
+                                  <option>القاهرة</option>
+                                  <option>الجيزة</option>
+                                  <option>البحيرة</option>
+                                  <option>اسوان</option>
+                                  <option>المنوفية</option>
+                                  <option>البحر الاحمر</option>
+                                  <option>الغردقه</option>
+                                  <option>الاسكندريه</option>
+                                  <option>اسيوط</option>
+                              </select>
+
+                              </div>
+                              <div class="col-md-3 mb-3 text-right">
+                                  <label for="validationCustom05">تاريخ الميلاد</label>
+                                  <input type="date" class="form-control" id="validationCustom05" required="">
+
+                              </div>
+
+                              <!-- <div class="col-md-6 mb-3 text-right">
+                              <label for="validationCustom01"> حساب جوجل</label>
+                              <input type="text" class="form-control text-right" id="validationCustom01"
+                                  placeholder=" " required>
+                              <div class="valid-feedback">
+                                  Looks good!
+                              </div>
+                          </div> -->
+                              <!-- <div class="col-md-6 mb-3 text-right">
+                                  <label for="validationCustom01">حساب الفيس بوك</label>
+                                  <input type="text" class="form-control text-right" id="validationCustom01" required="">
+                                  <div class="valid-feedback">
+                                      Looks good!
+                                  </div>
+                              </div>
+                              <div class="col-md-6 mb-3 text-right">
+                                  <label for="validationCustom02">حساب تويتر</label>
+                                  <input type="text" class="form-control text-right " id="validationCustom02" required="">
+                                  <div class="valid-feedback">
+                                      Looks good!
+                                  </div>
+                              </div> -->
+
+                          </div>
+                          <button id="save-profile"  class="btn btn-primary mb-2" type="submit">حفظ التعديلات</button>
+
+                        </form>
+
+                        <hr class="my-4 ">
+
+                          <div class="form-row">
+
+                              <div class="col-md-12 mb-3 text-right">
+                                  <label for="email">البريد الالكتروني</label>
+                                  <input autocomplete="off" [(ngModel)]="email" type="email" class="form-control text-right " id="email" placeholder=" " required="">
+                              </div>
+                          </div>
+                          <button (click)="updateEmail()" class="btn btn-primary mb-2" type="submit">حفظ التعديلات</button>
+
+                          <hr class="my-4 ">
+
+                          <div class="form-row">
+                              <div class="col-md-6 mb-3 text-right">
+                                  <label for="current-password">كلمة السر الحالية</label>
+                                  <input [(ngModel)]="currentPassword" type="password" class="form-control text-right " id="current-password" placeholder=" " required="">
+
+                              </div>
+                              <div class="col-md-6 mb-3 text-right">
+                                  <label for="new-password">كلمة السر الجديدة</label>
+                                  <input [(ngModel)]="newPassword" type="password" class="form-control text-right" id="new-password" placeholder=" " required="">
+
+                              </div>
+                          </div>
+                          <!--
+                      <div class="form-group text-right">
+                          <label for="exampleFormControlTextarea1 ">صف نفسك</label>
+                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div> -->
+
+                          <button id="changePassword" (click)="updatePassword()" class="btn btn-primary mb-2" type="submit">حفظ التعديلات</button>
+
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+  </div>
+
+</div>

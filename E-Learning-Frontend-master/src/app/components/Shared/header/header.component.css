@@ -1,0 +1,35 @@
+*{
+  direction: rtl;
+}
+.rd{
+  border-radius: 20px;
+  font-weight: 700;
+}
+ul li{
+  font-weight: 500;
+}
+.collapse.navbar-collapse.mr-4{
+  margin-left: auto;
+  cursor: pointer;
+}
+.bsignup{
+  background: #00adb5;
+  border: #00adb5 solid 2px;
+  transition: all .2s ease;
+}
+.bsignup:hover{
+  background-color: #292b2c;
+  border: #292b2c solid 2px;
+}
+.loader{
+  z-index: 100;
+  top: 50%;
+}
+.g{
+  margin-top: 5.8%;
+  color: #00adb5;
+}
+.c{
+  color: #00adb5;
+}
+

@@ -1,0 +1,31 @@
+<nav style="background-color: #eeefff;" dir="rtl" class="navbar fixed-top navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" routerLink="/Home">
+            <img style="width: 105px;" id="personal" src="assets/images/logo.png">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="collapse navbar-collapse mr-4 text-right" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto" style="font-size:15px;">
+                <li class="nav-item ml-4"> <a class="nav-link" routerLinkActive="active" routerLink='/Home'>الصفحة الرئيسية <span class="sr-only">(current)</span></a></li>
+                <li class="nav-item ml-4"> <a class="nav-link" routerLinkActive="active" routerLink="lessons"> تصفح دروسنا</a></li>
+                <li class="nav-item ml-4"> <a class="nav-link" routerLinkActive="active" routerLink='courses'>دوراتنا</a></li>
+                <li class="nav-item ml-4"> <a class="nav-link" routerLinkActive="active" routerLink='/Articles'> المقالات</a></li>
+                <li class="nav-item ml-4"> <a class="nav-link" routerLinkActive="active" routerLink='questions'> المنشورات</a></li>
+                <li class="nav-item ml-4"> <a class="nav-link" routerLinkActive="active" routerLink='questionpool'> الأسئلة</a></li>
+            </ul>
+            <div *ngIf="!userEmail" id="adding">
+                <button type="button" routerLink="/register" class="btn btn-primary ml-3 rd bsignup"><i class="fas fa-user-plus"></i> سجل مجانا</button>
+                <button type="button" routerLink="/login" class="btn btn-outline-dark rd"><i class="fas fa-sign-in-alt"></i> دخول</button>
+            </div>
+            <div *ngIf="userEmail" class="signout">
+                <img routerLink="/profile" title="{{userEmail}}" [src]="getImg()" style="width: 45px;height: 45px;margin-left: 10px;margin-right: 1em;border-radius: 50% 50%;" alt="">
+                <button class="btn btn-outline-dark rd" style="height: 10%; margin: auto 0;" id="signout" (click)="logOut()">سجل الخروج</button>
+            </div>
+        </div>
+    </div>
+    <div class="fixed-top" *ngIf="loader.isloading |async">
+        <mat-progress-bar mode="indeterminate" [color]="color"></mat-progress-bar>
+    </div>
+</nav>

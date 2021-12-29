@@ -1,0 +1,24 @@
+/* section5 */
+#sec5{
+  font-weight: 500;
+  line-height: 30px;
+}
+#sec5 p{
+  font-size: 24px;
+  color: white;
+}
+#sec5 p a{
+  color: black;
+  transition: all .3s ease;
+}
+#sec5 p a:hover{
+  color: white;
+}
+#sec5 h2::after{
+  content: '';
+  background: black;
+  display: block;
+  height: 3px;
+  width: 170px;
+  margin: 20px auto 5px;
+}

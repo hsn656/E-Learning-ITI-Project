@@ -1,0 +1,200 @@
+body {
+    font-family: 'Tajawal', sans-serif;
+    scroll-behavior: smooth;
+}
+
+@media only screen and (max-width: 440px) {
+    #slider {
+        display: none;
+    }
+}
+
+#crs {
+    margin-top: 10%;
+}
+
+.btn:hover {
+    background-color: #17A2B8;
+    transition: all 1s;
+}
+
+.text1:hover {
+    color: white;
+}
+
+
+/* ****************************************************** */
+
+.signin-signup {
+    width: 45%;
+    direction: ltr;
+}
+
+#signin,
+#signup {
+    outline: none;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 25px;
+    transition: all .6s;
+    cursor: pointer;
+}
+
+#signin {
+    border: 1px solid #555;
+    color: #555;
+    background: transparent;
+}
+
+#signup {
+    border: 0;
+    margin-left: 5px;
+    background: #00adb5;
+    color: #fff;
+}
+
+#signin:hover,
+#signup:hover {
+    background: #132c33;
+    color: #fff;
+}
+
+.signout {
+    width: 45%;
+    direction: ltr;
+}
+
+#signout {
+    outline: none;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 25px;
+    transition: all .6s;
+    cursor: pointer;
+}
+
+.signout img {
+    width: 8%;
+    height: 30%;
+    margin-left: 10px;
+}
+
+.signout #profileEmail {
+    color: #00adb5;
+    font-weight: bold;
+}
+
+#signout {
+    border: 1px solid #555;
+    color: #555;
+}
+
+#signout:hover {
+    background: #132c33;
+    color: #fff;
+}
+
+
+/* section1 */
+
+#section1 img {
+    background: linear-gradient(to bottom right, #eeefff, #4365c0);
+    background-blend-mode: overlay;
+}
+
+.carousel-caption p {
+    font-size: 30px;
+}
+
+.carousel-caption h1 a {
+    color: white;
+    font-size: 48px;
+    transition: all .3s ease;
+}
+
+.carousel-caption h1 a:hover {
+    color: #eeefff;
+    text-decoration: none;
+    text-shadow: .5rem .5rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+#section1 .carousel-item img {
+    filter: blur(6px);
+}
+
+
+/* loader */
+
+.afterloader {
+    display: none;
+}
+
+#loader {
+    border: 16px solid transparent;
+    border-radius: 50%;
+    border-top: 16px solid #5bc0de;
+    border-bottom: 16px solid #5bc0de;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    top: 40%;
+    left: 45%;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* arrow up */
+
+#goUp {
+    font-size: 60px;
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+    display: block;
+    color: #00adb5;
+    transition: all .3s ease;
+}
+
+#goUp:hover {
+    color: black;
+    text-shadow: .5px .5px 9px #555;
+    transform: scale(1.1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media screen and (max-width: 769px) {
+    #adding {
+        margin-left: 1.5em;
+        float: right;
+    }
+    #navbarNavDropdown>ul {
+        text-align: right;
+    }
+    .carousel-caption p {
+        font-size: 20px;
+    }
+}

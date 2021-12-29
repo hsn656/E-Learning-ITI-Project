@@ -1,0 +1,77 @@
+.check {
+    font-size: 16px;
+}
+
+
+/* .err{
+  background-color: rgba(255, 0, 0, 0.1);
+  border: none;
+  color: red;
+  pointer-events: none;
+}
+.suc{
+  background-color: rgba(172, 255, 47, 0.1);
+  color: greenyellow;
+  border: none;
+  pointer-events: none;
+} */
+
+.bord {
+    border-bottom: solid 2px #00acb549;
+    transition: all .2s ease-in-out;
+}
+
+.bord:hover {
+    background-color: #f7f7f781;
+}
+
+.fontanswes {
+    font-weight: 500;
+}
+
+.question {
+    font-weight: 500;
+}
+
+.showanswers {
+    background-color: black;
+    color: white;
+    transition: all .2s ease;
+    font-weight: 500;
+}
+
+.showanswers:hover {
+    background-color: white;
+    border: solid .5px white;
+    color: black;
+}
+
+.sendanswer {
+    background-color: #006A71;
+    color: #FFFFDD;
+    border: solid .5px #006A71;
+    transition: all .2s ease;
+    font-weight: 500;
+}
+
+.sendanswer:hover {
+    background-color: white;
+    border: solid .5px white;
+    color: #006A71;
+}
+
+.example-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+    align-items: center;
+}
+
+.example-radio-button {
+    margin: 5px;
+    font-weight: 500;
+}
+
+.modelfont {
+    font-weight: 500;
+}

@@ -1,0 +1,12 @@
+<section id="quest">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-3">
+        <app-questionfilter (sendTopicId)="gotoParent($event)"></app-questionfilter>
+      </div>
+      <div class="col-lg-8">
+        <app-questionscont [topicId]="topicId"></app-questionscont>
+      </div>
+    </div>
+</div>
+</section>

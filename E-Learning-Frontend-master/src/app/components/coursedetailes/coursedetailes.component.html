@@ -1,0 +1,78 @@
+<section id="crs">
+    <div id="row">
+
+    </div>
+
+    <div class="container ">
+        <div class="row ">
+            <div class="col-md-12 col-lg-8 mb-4 ">
+                <div class="d-flex justify-content-center">
+                    <img id="courseImg" class="rounded shadow bg-white rounded mb-3" style="width: 100%; height: 300px;" src="https://img.youtube.com/vi/{{course.image}}/0.jpg" alt="صوره الكورس">
+                </div>
+
+                <div>
+                    <div class="d-flex ">
+                        <h2 class="py-3 border-bottom border-info">وصف البرنامج</h2>
+                    </div>
+                    <div class="d-flex ">
+                        <p id="desc-text" class="text-right h5">
+                            {{Description}}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-4 lessons">
+                    <div class="d-flex ">
+                        <h2 class="py-3 border-bottom border-info ">محتوي الدورة</h2>
+                    </div>
+                    <div class="d-flex " *ngFor='let les of Content'>
+                        <a [routerLink]="['/lesson/'+les.id]" class="text-right h6">
+            {{les.title}}
+          </a>
+                    </div>
+                </div>
+                <button class="btn btn-info w-100 py-3  my-4"><a [routerLink]="['/exam/'+id]" class="h4 text-white">الاختبار علي الدورة</a>
+
+      </button>
+            </div>
+
+            <div class="col-md-12 col-lg-4 ">
+                <div class="w-100 d-flex justify-content-center">
+                    <div class="card  w-100 mb-3 shadow" style="width: 18rem;">
+                        <div class="card-header text-white bg-info d-flex  text-right font-weight-bold h5">
+                            {{Title}}</div>
+                        <div class="card-body ">
+
+                            <div class="d-flex justify-content-between ">
+                                <div class="card-text ">
+                                    <p class="text-right ">المحاضر</p>
+                                </div>
+                                <div class="card-text ">
+                                    <p class=" text-info ">{{Auther}}</p>
+                                </div>
+                            </div>
+
+                            <button class="btn shadow w-100 py-2 my-3"><span class="text1">اشترك الان</span></button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="w-100 d-flex justify-content-center">
+                    <div class="card  w-100 mb-3 shadow" style="width: 18rem;">
+                        <div class="card-header text-white bg-info d-flex  text-right font-weight-bold h4">
+                            تصفح كورسات اخري</div>
+                        <div class="card-body ">
+
+                            <div class="d-flex " *ngFor='let crs of courses'>
+                                <a [routerLink]="['/course/'+crs.id]" class="text-right h6 mb-3 text-dark" *ngIf="crs.name != Title">{{crs.name}}</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

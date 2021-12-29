@@ -1,0 +1,129 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "title": "(لو كنت كما كنت لكنت كما كنت لكن ذلك لم يكن) ما نوع كان؟",
+      "evaluation": 6,
+      "answerCount": 3,
+      "views": 56,
+      "createdAt": "Wed, 21 Jul 2021 10:40:31 GMT",
+      "user": {
+        "id": 1,
+        "name": "hsn mohammed",
+        "photo": "https://lh3.googleusercontent.com/a-/AOh14GivB7p6yl_U3CC8bDpmPJ-Yixf3nDgYMLaVHgUc=s96-c"
+      }
+    },
+    {
+      "id": 2,
+      "title": "السؤال الثاني",
+      "evaluation": 6,
+      "answerCount": 6,
+      "views": 5,
+      "createdAt": "Wed, 21 Jul 2021 20:40:31 GMT",
+      "user": {
+        "id": 2,
+        "name": "abudallah hamdo",
+        "photo": "https://lh3.googleusercontent.com/a-/AOh14GivB7p6yl_U3CC8bDpmPJ-Yixf3nDgYMLaVHgUc=s96-c"
+      }
+    },
+    {
+      "id": 3,
+      "title": "السؤال الثالث",
+      "evaluation": 3,
+      "answerCount": 1,
+      "views": 44,
+      "createdAt": "Wed, 21 Jul 2021 20:40:31 GMT",
+      "user": {
+        "id": 2,
+        "name": "abudallah hamdo",
+        "photo": "https://lh3.googleusercontent.com/a-/AOh14GivB7p6yl_U3CC8bDpmPJ-Yixf3nDgYMLaVHgUc=s96-c"
+      }
+    }
+  ],
+  "answers": [
+    {
+      "id": 1,
+      "content": "اجابة اولى",
+      "createdAt": "Wed, 21 Jul 2021 10:40:31 GMT",
+      "evaluation": 6,
+      "questionID": 2,
+      "user": {
+        "id": 1,
+        "name": "hsn mohammed",
+        "photo": "https://lh3.googleusercontent.com/a-/AOh14GivB7p6yl_U3CC8bDpmPJ-Yixf3nDgYMLaVHgUc=s96-c"
+      }
+    },
+    {
+      "id": 2,
+      "content": "اجابة ثانية",
+      "createdAt": "Wed, 21 Jul 2021 10:40:31 GMT",
+      "evaluation": 7,
+      "questionID": 2,
+      "user": {
+        "id": 1,
+        "name": "hsn mohammed",
+        "photo": "https://lh3.googleusercontent.com/a-/AOh14GivB7p6yl_U3CC8bDpmPJ-Yixf3nDgYMLaVHgUc=s96-c"
+      }
+    },
+    {
+      "id": 3,
+      "content": "والله ما اعرف",
+      "createdAt": "Wed, 21 Jul 2021 10:40:31 GMT",
+      "evaluation": 5,
+      "questionID": 1,
+      "user": {
+        "id": 2,
+        "name": "abudallah hamdo",
+        "photo": "https://lh3.googleusercontent.com/a-/AOh14GivB7p6yl_U3CC8bDpmPJ-Yixf3nDgYMLaVHgUc=s96-c"
+      }
+    },
+    {
+      "id": 4,
+      "content": "والله ما اعرف",
+      "createdAt": "Wed, 21 Jul 2021 10:40:31 GMT",
+      "evaluation": 4,
+      "questionID": 3,
+      "user": {
+        "id": 2,
+        "name": "abudallah hamdo",
+        "photo": "https://lh3.googleusercontent.com/a-/AOh14GivB7p6yl_U3CC8bDpmPJ-Yixf3nDgYMLaVHgUc=s96-c"
+      }
+    },
+    {
+      "content": "والله ممكن",
+      "createdAt": "Thu, 22 Jul 2021 13:54:38 GMT",
+      "evaluation": 0,
+      "questionID": "3",
+      "user": {
+        "id": 1,
+        "name": "hsn mohammed",
+        "photo": "https://lh3.googleusercontent.com/a-/AOh14GivB7p6yl_U3CC8bDpmPJ-Yixf3nDgYMLaVHgUc=s96-c"
+      },
+      "id": 5
+    },
+    {
+      "content": "لكن لماذا؟؟!",
+      "createdAt": "Thu, 22 Jul 2021 13:56:25 GMT",
+      "evaluation": 0,
+      "questionID": "3",
+      "user": {
+        "id": 1,
+        "name": "hsn mohammed",
+        "photo": "https://lh3.googleusercontent.com/a-/AOh14GivB7p6yl_U3CC8bDpmPJ-Yixf3nDgYMLaVHgUc=s96-c"
+      },
+      "id": 6
+    },
+    {
+      "content": "مبتدأ مرفووع",
+      "createdAt": "Thu, 22 Jul 2021 13:57:36 GMT",
+      "evaluation": 0,
+      "questionID": "3",
+      "user": {
+        "id": 1,
+        "name": "hsn mohammed",
+        "photo": "https://lh3.googleusercontent.com/a-/AOh14GivB7p6yl_U3CC8bDpmPJ-Yixf3nDgYMLaVHgUc=s96-c"
+      },
+      "id": 7
+    }
+  ]
+}

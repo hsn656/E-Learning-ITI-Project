@@ -1,0 +1,78 @@
+<div *ngFor="let question of examQuestions" class="media text-right bord mb-3 p-4">
+    <div class="media-body">
+        <h2 class="mt-3 question" id="firstquestionid">{{question.content}}</h2>
+        <div class="d-flex bd-highlight">
+            <div class="mr-auto p-2 bd-highlight">
+                <button class="btn btn-dark rounded-pill showanswers" type="button" data-toggle="collapse" [attr.data-target]="'#answerforthequestion'+question.id" aria-expanded="false" aria-controls="answerforthequestion">
+          <i class="fas fa-file-signature"></i>  &nbsp;&nbsp; اظهار الاختيارات
+        </button>
+            </div>
+        </div>
+        <div class="collapse text-center" [id]="'answerforthequestion'+question.id">
+            <div class="d-block">
+                <!-- <div class="justify-content-start m-4">
+          <input type="radio" name="firstquestion" value="a">
+          <label for="a" class="fontanswes"> &nbsp;&nbsp;الاختيار الاول</label>
+        </div>
+        <div class="justify-content-center m-4">
+          <input type="radio"name="firstquestion" value="b">
+          <label for="b" class="fontanswes">&nbsp;&nbsp;الاختيار الثاني</label>
+        </div>
+        <div class="justify-content-end m-4 ">
+          <input type="radio" name="firstquestion" value="c">
+          <label for="c" class="fontanswes">&nbsp;&nbsp;الاختيار الثالث</label>
+        </div>
+        <div class="justify-content-end m-4 mb-0">
+          <input type="radio" name="firstquestion" value="d">
+          <label for="d" class="fontanswes">&nbsp;&nbsp;الاختيارالرابع</label>
+        </div>
+
+                ngmodel=""//two way binding-->
+
+                <!-- [(ngModel)]="favoriteSeason" -->
+
+                <mat-radio-group aria-labelledby="firstquestionid" class="example-radio-group " layout-align="center center">
+                    <mat-radio-button (click)="trueOrFalse(answer.optionId,question.id, btnModal)" class="example-radio-button w-100" [id]="answer.optionId.toString()" *ngFor="let answer of question.options" [value]="answer.content">
+                        &nbsp;&nbsp; {{answer.content}}
+                    </mat-radio-button>
+                </mat-radio-group>
+
+                <!-- #exampleModal -->
+                <button #btnModal class="btn btn-dark rounded-pill sendanswer" type="button" data-toggle="modal">
+          <i class="fas fa-check"></i>  &nbsp;&nbsp; ارسال الاجابة
+        </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+            </div>
+            <div class="modal-body text-center modelfont">
+                الاجابة صحيحة
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal_2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+            </div>
+            <div class="modal-body text-center modelfont">
+                الاجابة خاطئة<br> الاجابة الصحيحة هي "{{correctAnswer}}"
+            </div>
+        </div>
+    </div>
+</div>

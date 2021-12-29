@@ -1,0 +1,82 @@
+.media img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.viewcolor{
+  color: #234C63;
+  transition: all .4s ease;
+}
+
+.viewcolor:hover{
+  color: black;
+}
+.viewcolor:focus{
+  outline-offset: 0;
+  outline: 0;
+  box-shadow: none;
+}
+
+
+.likecolor{
+  color: #379956;
+  transition: all .4s ease;
+}
+
+.likecolor:hover{
+  color: black;
+}
+.likecolor:focus{
+  outline-offset: 0;
+  outline: 0;
+  box-shadow: none;
+}
+
+
+.commentcolor{
+  color: #28ABB9;
+  transition: all .4s ease;
+}
+
+.commentcolor:hover{
+  color:black;
+}
+.commentcolor:focus{
+  outline-offset: 0;
+  outline: 0;
+  box-shadow: none;
+}
+
+
+.removefootefct{
+  background-color: white;
+  border: none;
+}
+
+.btnaddcomment{
+  background-color: transparent;
+  border: solid .5px #28ABB9;
+  color: #28ABB9;
+  transition: all .4s ease;
+}
+.btnaddcomment:hover{
+  background-color: #28ABB9;
+  color: white;
+}
+.btnaddcomment:focus{
+  outline: 0;
+  box-shadow: 0;
+}
+
+.mg{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cardbord{
+  border: solid .1px #00adb5;
+  transition: all .5s ease;
+}
+.cardbord:hover{
+  border: solid .1px black;
+}

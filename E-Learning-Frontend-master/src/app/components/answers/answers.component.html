@@ -1,0 +1,153 @@
+<section id="asker" style="margin-top: 5em;">
+    <div class="container">
+        <div class="row p-4">
+            <div class="col-lg-8">
+
+                <!-- question section -->
+                <div class="question-content" data-views="10" data-anscount="1">
+                    <div data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out">
+                        <div class="media">
+                            <img [src]="getImg(questions.image)" class="ml-3" alt="...">
+                            <div class="media-body text-right">
+                                <h5 style="font-size:15px;font-weight:700;" class="mt-0"> {{questions.userName.split("@")[0]}}</h5>
+                                <p> <i class="far fa-clock ml-2"></i>{{getEstimatedDate(questions.createdAt)}}</p>
+                            </div>
+                        </div>
+                        <div class="card text-right mt-2">
+                            <div class="card-body">
+                                <h2 class="card-title">
+                                    {{questions.content}}
+                                </h2>
+                                <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+                            </div>
+                            <div class="card-footer text-left  ask">
+                                <div class="d-flex">
+                                    <div class="ml-auto bd-highlight">
+                                        <span class="mr-auto">
+                      <i #up [ngClass]="{'text-muted': currentUserLike(questions)||!checkToken()}" (click)="increaseEval(up,down)" class="fas fa-arrow-up ev evup"></i>
+                      <span class="ml-auto mr-auto ev">{{questions.postLikes}}</span>
+                                        <i #down [ngClass]="{'text-muted': currentUserDisLike(questions)||!checkToken()}" (click)="decreaseEval(up, down)" class="fas  fa-arrow-down ev evdown"></i>
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-link"></i>
+                                        <i class="fab fa-google-plus-g"></i>
+                                        <i class="fab fa-twitter"></i>
+                                        <i class="fab fa-facebook-f"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div *ngIf="bestAnswer!=null" class="card text-center mt-2">
+                    <div class="best-answer">
+                        <div data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out">
+                            <div class="card-header text-right card1-style">
+                                أفضل الإجابات
+                            </div>
+
+                            <div class="card-body text-right">
+                                <div class="media">
+                                    <img [src]="getImg(bestAnswer.image)" class="align-self-start ml-3" alt="...">
+                                    <div class="media-body">
+                                        <h5 style="font-size:15px;font-weight:700;" class="mt-0">{{bestAnswer.userName.split("@")[0]}}</h5>
+                                        <p> <i class="far fa-clock ml-2"></i>{{getEstimatedDate(bestAnswer.createdAt)}}</p>
+                                        <h3 class="h5">{{bestAnswer.content}}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer fotcard1">
+                                <div class="d-flex bd-highlight">
+                                    <div class="ml-auto bd-highlight">
+                                        <span class="mr-auto">
+                      <i #upAnswer [ngClass]="{'text-muted': currentUserCommentLike(bestAnswer)||!checkToken()}" (click)="increaseAnsEval(bestAnswer.id, upAnswer, downAnswer)"
+                        class="fas fa-arrow-up ev evup"></i>
+                      <span class="ml-auto mr-auto ev">{{bestAnswer.commentLikes}}</span>
+                                        <i #downAnswer [ngClass]="{'text-muted': currentUserCommentDisLike(bestAnswer)||!checkToken()}" (click)="decreaseAnsEval(bestAnswer.id,  upAnswer, downAnswer)" class="fas fa-arrow-down ev evdown"></i>
+                                        </span>
+                                    </div>
+                                    <div class="bd-highlight ml-1 comm">
+                                        <a>أضف ردا<i class="far fa-comment-dots"></i></a>
+                                    </div>
+                                    <div class="bd-highlight rep">
+                                        <a>ابلغ عن الإجابة<i class="fas fa-exclamation-triangle"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div *ngIf="otherAnswers.length!=0" id="otherAnswersTitle" class="mt-2">
+                    <div class="card-header text-right card1-style aos-init aos-animate" data-aos="fade-in" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out">
+                        الإجابات الأخرى
+                    </div>
+                </div>
+                <div id="otherAnswersContainer" class="other-answers">
+                    <div *ngFor="let item of otherAnswers" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out">
+                        <div class="card text-center mt-2 aos-init aos-animate" data-aos="fade-in" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out">
+                            <div class="card-body text-right">
+                                <div class="media">
+                                    <img [src]="getImg(item.image)" class="align-self-start ml-3" alt="...">
+                                    <div class="media-body">
+                                        <h3 style="font-size:15px;font-weight:700;" class="mt-0">{{item.userName.split("@")[0]}}</h3>
+                                        <p> <i class="far fa-clock ml-2"></i>{{getEstimatedDate(item.createdAt)}}</p>
+                                        <h3 class="h5">{{item.content}}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer fotcard1">
+                                <div class="d-flex bd-highlight">
+                                    <div class="ml-auto bd-highlight">
+                                        <span class="mr-auto">
+                      <i #upAnswerRef [ngClass]="{'text-muted': currentUserCommentLike(item)||!checkToken()}" (click)="increaseAnsEval(item.id,  upAnswerRef, downAnswerRef)"
+                        class="fas fa-arrow-up ev evup"></i>
+                      <span class="ml-auto mr-auto ev">{{item.commentLikes}}</span>
+                                        <i #downAnswerRef [ngClass]="{'text-muted': currentUserCommentDisLike(item)||!checkToken()}" (click)="decreaseAnsEval(item.id,  upAnswerRef, downAnswerRef)" class="fas fa-arrow-down ev evdown"></i>
+                                        </span>
+                                    </div>
+                                    <div class="bd-highlight ml-1 comm">
+                                        <a>اضف تعليق<i class="far fa-comment-dots"></i></a>
+                                    </div>
+                                    <div class="bd-highlight rep">
+                                        <a>ابلغ عن التعليق<i class="fas fa-exclamation-triangle"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- answer -->
+                <div class="card text-center mt-2 aos-init aos-animate" data-aos="fade-in" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out">
+                    <div class="card-header text-right card1-style">
+                        أضف إجابتك
+                    </div>
+                    <div class="card-body text-right">
+                        <textarea [disabled]="!checkToken()" [(ngModel)]="answer" id="ansTextArea" class="p-2" style="width: 100%;height: 40vh;"></textarea>
+                    </div>
+                    <div class="card-footer fotcard1">
+                        <div class="d-flex bd-highlight">
+                            <div class="ml-auto bd-highlight">
+                                <button [disabled]="!checkToken()" (click)="AddData()" type="button" class="btn btn-dark">نشر<i class="far fa-comment-dots"></i> </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="asideQuestions.length!=0" class="col-lg-4 p-4">
+                <div class="media text-right faq p-3 aos-init aos-animate" data-aos="fade-in" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out">
+                    <div class="media-body">
+                        <h3 class="mt-0 mb-2">الاسئلة الشائعة</h3>
+                        <div id="commonQuestions">
+                            <a *ngFor="let item of asideQuestions" routerLink="/answers/{{item.id}}" class="btn d-block text-right">
+              {{item.content}}
+              </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

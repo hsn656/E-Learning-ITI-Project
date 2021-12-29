@@ -1,0 +1,25 @@
+<section id="exam">
+    <div class="container quiz-container py-2 my-5 ">
+        <div class="quiz-info  text-center mt-3">
+            <h2 class="quiz-title t">{{exam.name}}</h2>
+            <p id="ss" class=" quiz-length t">عدد الأسئلة <span>{{exam.questions.length}}</span> سؤالا</p>
+            <h2 id="resultContent" class="t" *ngIf="degree>=0">النتيجة <span id="result">{{degree}}</span> من <span id="fulldegree"> {{exam.questions.length}}</span></h2>
+        </div>
+
+        <div #Questions class="text-center">
+            <div *ngFor="let quest of exam.questions;let i=index" class="question p-4">
+                <div class="question-part row justify-content-between pr-4 pl-4 pt-4">
+                    <h2 class="quistion-name py-2 px-3 w-100 text-right "> <span>{{i+1| number:'1.0-0':'en-IN'}}-</span> {{quest.content}}</h2>
+                </div>
+
+                <label *ngFor="let optoin of quest.options" class="px-2 text-right answer pr-4 pl-4  my-2 mx-auto w-100 ">
+          <input  attr.data-ans="{{optoin.isCorrect}}" name="{{i+1}}"  type="radio">
+          	&nbsp; {{optoin.content}}
+        </label>
+
+            </div>
+
+            <button class="btn btnexam rounded-pill mb-3" (click)="calc()">تقديم الاجابة <i class="fas fa-feather-alt"></i></button>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,35 @@
+
+<!-- <button class="btn w-100 filterbord" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  <mat-label>Number</mat-label>
+</button> -->
+
+<div class="w-100">
+  <!--<div class="card">
+     <ul class="list-group text-right">
+      <li type="button" class="list-group-item list-group-item-action">الوحده الاولي</li>
+      <li type="button" class="list-group-item list-group-item-action">الوحدة الثانية</li>
+      <li type="button" class="list-group-item list-group-item-action">الوحدة الثالثة</li>
+      <li type="button" class="list-group-item">
+        <button type="button" class="btn genertbutton">الخضوع لامتحان عشوائي</button>
+      </li>
+    </ul> -->
+    <form class="example-form w-100">
+      <mat-form-field class="example-full-width text-center">
+        <mat-label>الموضوع</mat-label>
+        <input type="text"
+               placeholder="اختر الموضوع"
+               aria-label="Number"
+               matInput
+               name="first"
+               [(ngModel)]="inputContent"
+               (change)="sendEvent()"
+               [formControl]="myControl"
+               [matAutocomplete]="auto">
+            <mat-autocomplete  #auto="matAutocomplete">
+              <mat-option (click)="getId($event)" class="rht" *ngFor="let option of options" [value]="option.title">
+                {{option.title}}
+              </mat-option>
+            </mat-autocomplete>
+      </mat-form-field>
+    </form>
+</div>

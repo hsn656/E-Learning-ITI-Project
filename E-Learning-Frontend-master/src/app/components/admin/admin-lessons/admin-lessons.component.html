@@ -1,0 +1,36 @@
+<br>
+<br>
+<br>
+<div class="row ">
+    <div class="m-auto col-10">
+        <div class="my-3 text-right">
+            <a [routerLink]="['/AddLesson']" class=" btn btn-primary">أضف درس جديد</a>
+        </div>
+        <table class="table table-bordered table-striped table-hover table-dark text-center">
+            <thead>
+                <tr>
+                    <th scope="col">الرقم المسلسل</th>
+                    <th scope="col">العنوان</th>
+                    <th scope="col">الرابط</th>
+                    <th scope="col">الترتيب</th>
+                    <th scope="col">الكورس</th>
+                    <th scope="col">الخيارات</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let lsn of lessons; let i =index">
+                    <th>{{i+1}}</th>
+                    <td>{{lsn.title}}</td>
+                    <td>{{lsn.link}}</td>
+                    <td>{{lsn.order}}</td>
+                    <td>{{lsn.courseId}}</td>
+                    <td>
+                        <a [routerLink]="['/EditLesson',lsn.id]" style="width: 5rem;" class="mx-2 btn btn-success text-capitalize">تعديل</a>
+
+                        <a style="width: 5rem;" class="mx-2 btn btn-danger text-capitalize">حذف</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

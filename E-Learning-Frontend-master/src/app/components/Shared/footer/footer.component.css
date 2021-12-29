@@ -1,0 +1,46 @@
+footer{
+  font-size: 17px;
+  font-weight: 700;
+}
+.fot{
+  background:linear-gradient(to top,#eeefff,white);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+}
+.cp{
+  color: b;
+}
+.face{
+  transition: all .2s ease-in-out;
+}
+.face:hover{
+  border: none;
+  background: transparent;
+  color: #3b5998;
+}
+.youtube{
+  transition: all .2s ease-in-out;
+}
+.youtube:hover{
+  color:  #ff0000;
+  background: transparent;
+  border: none;
+}
+.google{
+  transition: all .2s ease-in-out;
+}
+.google:hover{
+  color:  #fbbc05;
+  background: transparent;
+  border: none;
+}
+
+.telg{
+  transition: all .2s ease-in-out;
+}
+.telg:hover{
+  color: #0088cc;
+  background:transparent;
+  border: none;
+}

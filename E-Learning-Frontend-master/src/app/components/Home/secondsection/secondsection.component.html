@@ -1,0 +1,26 @@
+<section id="sec2" class="mt-5">
+    <div class="container">
+        <div class="row p-4">
+            <div class="col-lg-6 text-right">
+                <h2 style="font-size: 20px;">الدروس الأكثر شيوعاً</h2>
+            </div>
+            <div class="col-lg-6">
+                <span><a routerLink="/lessons">تصفح الكل</a></span>
+            </div>
+        </div>
+        <div class="row main-row trending-courses">
+            <div class="col-lg-4 col-sm-12 mb-5 aos-init aos-animate" data-aos="fade-in" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" *ngFor="let lsn of lesson">
+                <div class="card p-3 m-auto" style="width: 18rem;">
+                    <img src="https://img.youtube.com/vi/{{lsn.image}}/0.jpg" class="card-img-top shadow bg-white rounded" alt="courses">
+                    <div class="card-body">
+                        <h5 class="card-title text-right mt-3" style="font-size: 15px;font-weight: 700;">
+                            {{lsn.title}}
+                        </h5>
+                        <button class=" card-title btn btn-info" routerLink="/lesson/{{lsn.id}}">ابدأ الآن</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

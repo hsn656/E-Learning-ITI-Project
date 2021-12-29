@@ -1,0 +1,65 @@
+/* section6 */
+h2{
+  font-weight: 800;
+}
+#sec6 h2::after{
+  content: '';
+  background: black;
+  display: block;
+  height: 3px;
+  width: 170px;
+  margin: 20px auto 5px;
+}
+.col-lg-4 .box{
+  position:relative;
+  width:320px;
+  height: 350px;
+  background:#fff;
+  padding:80px 40px;
+  box-shadow:0 15px 45px rgba(0,0,0,.1);
+}
+.col-lg-4 .box:before{
+  content:'';
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:#00adb5;
+  transform:scaley(0);
+  transform-origin : top;
+  transition: transform .5s ease;
+}
+.col-lg-4 .box:hover:before{
+  transform:scaley(1);
+  transform-origin : bottom;
+  transition: transform .5s ease;
+}
+.col-lg-4 .box h3{
+  position:relative;
+  font-size:1.5em;
+  font-weight: 600;
+  z-index:1;
+  transition:.5s ease;
+}
+.col-lg-4 .box p{
+  position:relative;
+  font-size:1em;
+  font-weight: 500;
+  z-index:1;
+  transition:.5s ease;
+}
+.col-lg-4 .box a{
+  position:relative;
+  font-size:1em;
+  font-weight: 500;
+  z-index:1;
+  transition:.5s ease;
+  color: black;
+}
+.col-lg-4 .box:hover h3 , .col-lg-4 .box:hover p{
+  color:#fff;
+}
+.col-lg-4 .box:hover a{
+  text-decoration: none;
+}

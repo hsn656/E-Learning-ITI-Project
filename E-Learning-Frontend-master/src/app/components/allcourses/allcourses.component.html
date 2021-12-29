@@ -1,0 +1,36 @@
+<section id="crs" class="mt-5">
+  <div class="container p-4 mt-4">
+    <!-- <input (keyup)="showcrs($event)" style="direction: rtl;" autocomplete="off" class="form-control p-1 mt-4" type="search" name="q" type="text"
+      placeholder="بحث" aria-label="Search" [(ngModel)]="listfilter"> -->
+    <div class="row imglsn">
+      <div class="col-lg-4 tmg">
+        <form action="search.html" class="form sectionMiddle m-auto">
+          <div class="input-group mb-3 tmg" style="direction: ltr !important;">
+              <div class="input-group-prepend">
+                  <button class="btn btn-outline-dark" type="button" id="button-addon1">
+                  <i class="fas fa-search"></i>
+              </button>
+              </div>
+              <input id="searchInput" (keyup)="showcrs($event)" type="text" class="form-control" placeholder="ابحث" aria-label=""aria-describedby="basic-addon1">
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row m-auto p-4"  >
+      <div class="col-lg-3 col-sm-12 mb-4 aos-init aos-animate" data-aos="fade-in" data-aos-offset="200"
+        data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" *ngFor="let cr of filteredCourse">
+        <div class="card h-100 shadow" >
+          <img src="https://img.youtube.com/vi/{{cr.image}}/0.jpg" class="card-img-top" alt="crs_image">
+          <div class="card-img-overlay ml-auto mr-auto h-50">
+            <a class="btn btn-dark mb-1" routerLink="/course/{{cr.id}}">التفاصيل</a>
+          </div>
+          <div class="card-body middle1">
+            <h5 class="card-title text-right" style="font-size: 15px;font-weight: 700;">
+              {{cr.name}}
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,29 @@
+<section id="articlee">
+  <div class="container-fluid">
+    <div class="row imglsn">
+      <div class="col-lg-4 tmg">
+        <form action="search.html" class="form sectionMiddle m-auto">
+          <div class="input-group mb-3 tmg" style="direction: ltr !important;">
+              <div class="input-group-prepend">
+                  <button class="btn btn-outline-light" type="button" id="button-addon1">
+                  <i class="fas fa-search"></i>
+              </button>
+              </div>
+              <input id="searchInput" (keyup)="ReBind($event)" type="text" class="form-control" placeholder="ابحث" aria-label=""aria-describedby="basic-addon1">
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-lg-4 mb-3"*ngFor="let art of CopyArticles">
+        <div class="box m-auto text-center">
+          <h3>{{art.title}}</h3>
+          <p><span>
+                {{art.discription | slice:0:200 }}
+              </span>
+              <a routerLink='/article/{{art.id}}'>اقرأ المزيد</a></p>
+        </div>
+    </div>
+    </div>
+  </div>
+</section>

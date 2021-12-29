@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="col-lg-8 mg">
+        <div class="card text-right" *ngFor='let comment of comments'>
+            <div class="card-body">
+                <div class="media text-right">
+                    <img *ngIf="!comment.image" src="../../../../assets/images/person-icon.png" class="align-self-start ml-3" alt="...">
+                    <img *ngIf="comment.image" [src]="'https://elearningbackendapi.azurewebsites.net/'+comment.image" class="align-self-start ml-3" alt="...">
+                    <div class="media-body">
+                        <h1 class="m-0">{{comment.userName}}</h1>
+                        <p>
+                            <i class="far fa-clock mt-2 mx-2"></i>{{getEstimatedDate(comment.createdAt)}}
+                        </p>
+                        <p class="mb-2 h6">{{comment.content}}</p>
+                        <!-- <div class="d-flex justify-content-start">
+                <button type="button" class="btn viewcolor"><i class="far fa-eye"></i> &nbsp;&nbsp;عدد المشاهدات</button>
+                <button type="button" class="btn likecolor mr-4"><i class="fas fa-thumbs-up"></i>&nbsp;&nbsp;2</button>
+                <button type="button" class="btn commentcolor mr-4"><i class="fas fa-comment-alt"></i> &nbsp;&nbsp;اضافة تعليق</button>
+              </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="card text-center mt-3">
+            <div class="card-body">
+                <div class="input-group">
+                    <textarea [disabled]="IsLogged()" #txtArea class="form-control" aria-label="With textarea" style="height: 20vh;" [(ngModel)]="commentContent"></textarea>
+                </div>
+            </div>
+            <div class="card-footer text-left m-auto removefootefct">
+                <button [disabled]="IsLogged()" type="button" (click)="addComment()" class="btn btnaddcomment">
+              اضف التعليق <i class="fas fa-paper-plane"></i>
+          </button>
+                <br>
+            </div>
+            <span [hidden]="!IsLogged()" class="text-info text-center"> قم بتسجيل الدخول أولا من <a routerLink="/login">هنا</a>  </span>
+
+        </div>
+    </div>
+</div>

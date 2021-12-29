@@ -1,0 +1,91 @@
+
+.media img {
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+}
+
+.card-footer i {
+  /* margin: 6px; */
+  cursor: pointer;
+  padding: 10px;
+  /* border: 1px solid white; */
+}
+
+.card-footer .fab.fa-facebook-f:hover {
+  color: #3b5999;
+}
+
+.card-footer .fab.fa-twitter:hover {
+  color: #55acee;
+}
+
+.card-footer .fab.fa-google-plus-g:hover {
+  color: #dd4b39;
+}
+
+.card-footer .fas.fa-link:hover {
+  color: #410093;
+}
+
+.card1-style {
+  background-color: rgba(37, 211, 102, .3);
+}
+
+.ask {
+  background-color: white;
+}
+
+.fotcard1 {
+  background-color: white;
+  border: none;
+}
+
+.ev {
+  font-weight: 500px;
+}
+
+.evup {
+  color: rgb(18, 207, 18);
+}
+
+.evdown {
+  color: red;
+}
+
+.comm {
+  color: black;
+}
+
+.comm:hover {
+  color: #02b875;
+  cursor: pointer;
+}
+
+.rep {
+  color: black
+}
+
+.rep:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.ather {
+  background-color: rgba(58, 175, 133, 0.4);
+}
+
+.faq {
+  box-shadow: 0 15px 45px rgba(0, 0, 0, .1);
+  background-color: white;
+  backface-visibility: hidden;
+  transition: all .5s ease;
+}
+
+.faq:hover {
+  transform: translateY(-4px);
+}
+
+.bg-cantAnswerWarn {
+  background-color: rgba(100, 96, 96, 0.21);
+}
